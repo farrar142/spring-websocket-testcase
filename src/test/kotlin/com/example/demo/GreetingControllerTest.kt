@@ -35,6 +35,7 @@ class GreetingControllerTest {
 
             override fun handleFrame(headers: StompHeaders, payload: Any?) {
                 if (payload is Greeting) {
+                    greetingFuture.complete(payload)
                 }
             }
         }
